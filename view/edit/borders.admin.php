@@ -1,4 +1,4 @@
-<?  
+<? 
 	require_once(SYS_PATH."auth.php");
 
 	if($include == 'header' ) {

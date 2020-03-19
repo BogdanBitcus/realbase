@@ -9,7 +9,7 @@
 	$query = "SELECT * FROM $table WHERE id='$id'";
  	$I = DB::fetchAssoc(DB::query($query));
 
-$include='header'; include(VIEW_PATH."borders.admin.php")?>
+$include='header'; include(EDIT_PATH."borders.admin.php")?>
 
 <form name=admingu ENCTYPE="multipart/form-data" METHOD=POST action="/_s/s_subm.php">
 <INPUT type=hidden name=id value=<?=$I[id]?>>
@@ -74,4 +74,4 @@ $(document).ready(function(){
 });
 </script>
 
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

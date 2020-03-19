@@ -15,6 +15,7 @@ if($_GET['logout'] == 1) { // выходим
 }
 
 //print_r($_SESSION);
+//print_r($_POST);exit();
 
 
 	$_log = trim(htmlspecialchars($_POST['_log']));
@@ -32,6 +33,7 @@ if ($_SESSION['_auth']) {
 	if(DB::numRows($res_pass)){
 		
 		$user = DB::fetchAssoc($res_pass);
+		//print_r($user);print_r(sign($_pas));exit;
 		if($user['pass'] == sign($_pas)){
 			
       		$_SESSION['_auth_id'] = $user['id'];

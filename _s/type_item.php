@@ -19,7 +19,7 @@
     while($arr = DB::fetchAssoc($res)) $VAR['types'][$arr['id']] = $arr;
 	
 
-	$include='header'; include(VIEW_PATH."borders.admin.php")?>
+	$include='header'; include(EDIT_PATH."borders.admin.php")?>
 
 <FORM action="/_s/s_subm.php" method=post enctype="multipart/form-data">
 	<input type=hidden name=relocate value="<?=$relocate?>">
@@ -43,19 +43,24 @@
 <?
 	 $dir_files = scandir(VIEW_PATH);
 	 foreach($dir_files as $f){
-	 	if (preg_match("/^edit.*/",$f)){
-	 		$selected = '';
-	 		if($I['admin'] == $f){
-				$selected = "selected='selected'";
-			}
-	 		$admin_s .= "<option value='".$f."' ".$selected.">".$f."</option>";
-	 	} else if (preg_match("/^view.*/",$f)){
+	 	if (preg_match("/^view.*/",$f)){
 			$selected = '';
 	 		if($I['tpl'] == $f){
 				$selected = "selected='selected'";
 			}
 	 		$tpl_s .= "<option value='".$f."' ".$selected.">".$f."</option>";
 		}
+	 }
+	 
+	 $dir_files_edit = scandir(EDIT_PATH);
+	 foreach($dir_files_edit as $f){
+	 	if (preg_match("/^edit.*/",$f)){
+	 		$selected = '';
+	 		if($I['admin'] == $f){
+				$selected = "selected='selected'";
+			}
+	 		$admin_s .= "<option value='".$f."' ".$selected.">".$f."</option>";
+	 	}
 	 }
  ?>
 		Шаблон для редактирования:
@@ -76,4 +81,4 @@
 	<input type=submit value='Сохранить'>
 </form>
 
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

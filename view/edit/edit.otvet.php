@@ -5,7 +5,7 @@
 	$res = DB::query($query);
 	$I = DB::fetchAssoc($res);
 
-$include='header'; include(VIEW_PATH."borders.admin.php");
+$include='header'; include(EDIT_PATH."borders.admin.php");
 ?>
 
 <form name='admingu' ENCTYPE="multipart/form-data" METHOD=POST action="/_s/s_subm.php">
@@ -25,16 +25,15 @@ $include='header'; include(VIEW_PATH."borders.admin.php");
     		</td>
    		</tr>
    		<tr>
-          	<td colspan="2">
-          		<textarea id="html_<?=$lang?>_h" name="html_<?=$lang?>_h" style="width: 100%; height: 350px;"><?=stripslashes($I['html_'.$lang])?></textarea>
-          	</td>
+          	<td class="bigtit">Количество голосов:</td>
+    		<td><input class="bigtxt" name="html_<?=$lang?>_s" value="<?=htmlspecialchars($I['html_'.$lang])?>"></td>
 	    </tr>
 	</table>
 
-<?php include(VIEW_PATH."inc.seo.php");
+<?php include(EDIT_PATH."inc.seo.php");
 
 if($_SESSION['_auth_id']){?>
 	<br><input type="submit" class="save" value="Сохранить">
 <?}?>
 </form>
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

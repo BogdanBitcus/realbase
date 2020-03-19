@@ -5,7 +5,7 @@
 	$res = DB::query($query);
 	$I = DB::fetchAssoc($res);
 
-$include='header'; include(VIEW_PATH."borders.admin.php");
+$include='header'; include(EDIT_PATH."borders.admin.php");
 ?>
 <form name=admingu ENCTYPE="multipart/form-data" METHOD=POST action="/_s/s_subm.php">
 <INPUT type=hidden name=id value=<?=$I[id]?>>
@@ -14,11 +14,11 @@ $include='header'; include(VIEW_PATH."borders.admin.php");
 
 	<table cellspacing="0" cellpadding="0" border="0" class="table" width="100%">
    		<tr>
-    		<td class="bigtit">Заголовок:</td>
+    		<td class="bigtit">З г®«оў®кєј/td>
     		<td><input class="bigtxt" name="name_<?=$lang?>_s" value="<?=htmlspecialchars($I['name_'.$lang])?>"></td>
    		</tr>
      	<tr>
-    		<td>Адрес в строке браузера:</td>
+    		<td>$пїЅе± в ±пїЅпїЅоЄҐ б° пїЅзҐ°аєј/td>
     		<td>
     			<input class="smtxt" name="url_s" value="<?=$I['url']?>" onchange="document.forms.admingu.addr_s.value=''">
 		   		<input type="hidden" name="addr_s" value="<?=$I['addr']?>" >
@@ -31,18 +31,18 @@ $include='header'; include(VIEW_PATH."borders.admin.php");
 	        </tr>
 	        </table>
 
-<?php include(VIEW_PATH."inc.seo.php");
+<?php include(EDIT_PATH."inc.seo.php");
 
 if($_SESSION['_auth_id']==1){?>
 
-    <input type="submit" class="save" name="Submit3" value="Сохранить">
-	<input type="button" class='save' name="S" id='send_emails' value="...и отправить в рассылку">
+    <input type="submit" class="save" name="Submit3" value="С®пїЅпїЅа­ЁпїЅпїЅ">
+	<input type="button" class='save' name="S" id='send_emails' value="...и ®пїЅп° вЁІпїЅ в °а±±пїЅлЄі">
               
 <script type='text/javascript'>
 $(document).ready(function(){
 
   $('#send_emails').click(function(){
-      //alert('Тестовый режим!'); return false;
+      //alert('ТҐпїЅпїЅоў»й °е¦ЁмЎ§); return false;
       sendletter();
   });
 
@@ -55,4 +55,4 @@ function sendletter() {
         
 <?}?>
 </form>
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

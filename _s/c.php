@@ -17,12 +17,15 @@
 	define(DB_PASS, 'Bl1n4ik1');
 	define(DB_NAME, 'realbase');
 	
+	// PATH
 	define(URL_ROOT, $_SERVER['DOCUMENT_ROOT']);
 	define(SYS_PATH, URL_ROOT.'/_s/');
 	define(VIEW_PATH, URL_ROOT.'/view/');
+	define(EDIT_PATH, URL_ROOT.'/view/edit/');
 	
+	// LANGS
 	define(LANG_DEFAUL, 'ru');
-	$lang = htmlspecialchars( $_REQUEST['lang'] ? $_REQUEST['lang'] : LANG_DEFAUL );
+	$lang = htmlspecialchars( $lang ? $lang : LANG_DEFAUL );
 
 	define(KEY_CRYPT, 's0m< $H!T каКА ї'.chr(254));
 	define(KEY_COOKIES, '+/50d096dc2bd097jhd44a/+');
@@ -38,4 +41,3 @@
 	include_once(SYS_PATH."libs.php");
 
 
-?>

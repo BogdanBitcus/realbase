@@ -27,7 +27,7 @@
 	}
 
 
-	$include='header'; include(VIEW_PATH."borders.admin.php");?>
+	$include='header'; include(EDIT_PATH."borders.admin.php");?>
 
 <a href=/_s/type_item.php?&relocate=<?echo urlencode($_SERVER['REQUEST_URI'])?> >Добавить</a>
 <br />
@@ -35,5 +35,5 @@
 <?	types(0,1);
 
 
-	$include='footer'; include(VIEW_PATH."borders.admin.php");
+	$include='footer'; include(EDIT_PATH."borders.admin.php");
 ?>

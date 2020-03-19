@@ -7,7 +7,7 @@
 	$res = DB::query($query);
  	while($o = DB::fetchAssoc($res)) $I[row][]=$o;
 
-	$include='header'; include(VIEW_PATH."borders.admin.php");
+	$include='header'; include(EDIT_PATH."borders.admin.php");
 ?>
 
 <form name="admingu" action="/_s/s_list.php" method="post" enctype="multipart/form-data">
@@ -17,8 +17,8 @@
 <input type="hidden" name="lan" value="<?=$lang?>">
 Заголовок страницы:<br />
 <input name="name_<?=$lang?>_s" value="<?=htmlspecialchars($I['name_'.$lang])?>" class="bigtxt">
-<?  include(VIEW_PATH."inc.edit.infoblock.php");
-	include(VIEW_PATH."inc.edit.photolist.php");
+<?  include(EDIT_PATH."inc.edit.infoblock.php");
+	include(EDIT_PATH."inc.edit.photolist.php");
 ?>
 <script type='text/javascript'>
 $(document).ready(function(){
@@ -47,4 +47,4 @@ $(document).ready(function(){
 <?}?>
 </form>
 
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

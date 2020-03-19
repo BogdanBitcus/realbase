@@ -6,7 +6,7 @@
 	$I = DB::fetchAssoc($res);
 	$I['html_ru'] = unserialize($I['html_ru']);
 
-$include='header'; include(VIEW_PATH."borders.admin.php");
+$include='header'; include(EDIT_PATH."borders.admin.php");
 ?> 	
 
 <form name=admingu ENCTYPE="multipart/form-data" METHOD=POST action="/_s/s_subm.php">
@@ -58,10 +58,10 @@ $include='header'; include(VIEW_PATH."borders.admin.php");
 	        </table>
 
 
-<?php include(VIEW_PATH."inc.seo.php");
+<?php include(EDIT_PATH."inc.seo.php");
 
 if($_SESSION['_auth_id']==1){?>
 	<br><input type="submit" class="save" value="Сохранить">
 <?}?>
 </form>
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>

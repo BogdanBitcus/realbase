@@ -2,31 +2,31 @@
 RewriteEngine on
 
 #Определяет условие при котором происходит преобразование
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
 
 
 
-#RewriteRule ^(.+)$ ?url=$1 [QSA,L]
+RewriteRule ^(.+)$ ?url=$1 [QSA,L]
 
 
 
 
 
-Options -Indexes
+#Options -Indexes
 
-RewriteRule ^admin/$ /ru/edit/1/
-RewriteRule ^ru/admin$ /?edit=1&id=1&lang=ru
-RewriteRule ^en/admin$ /?edit=1&id=1&lang=en
+#RewriteRule ^admin/$ /ru/edit/1/
+#RewriteRule ^ru/admin$ /?edit=1&id=1&lang=ru
+#RewriteRule ^en/admin$ /?edit=1&id=1&lang=en
 
-RewriteRule ^ru/edit/([0-9]*)/(.*) /?id=$1&edit=1&lang=ru&%{QUERY_STRING}
-RewriteRule ^en/edit/([0-9]*)/(.*) /?id=$1&edit=1&lang=en&%{QUERY_STRING}
+#RewriteRule ^ru/edit/([0-9]*)/(.*) /?id=$1&edit=1&lang=ru&%{QUERY_STRING}
+#RewriteRule ^en/edit/([0-9]*)/(.*) /?id=$1&edit=1&lang=en&%{QUERY_STRING}
 
-RewriteRule ^ru/(.*) /?url=$1&lang=ru&%{QUERY_STRING}
-RewriteRule ^en/(.*) /?url=$1&lang=en&%{QUERY_STRING}
+#RewriteRule ^ru/(.*) /?url=$1&lang=ru&%{QUERY_STRING}
+#RewriteRule ^en/(.*) /?url=$1&lang=en&%{QUERY_STRING}
 
-RewriteRule ^logout$  /_s/auth.php?logout=1
+#RewriteRule ^logout$  /_s/auth.php?logout=1
 
 #RewriteRule ^sitemap.xml$ /sitemap.php
 

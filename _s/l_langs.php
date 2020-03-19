@@ -2,7 +2,7 @@
 	include_once($_SERVER['DOCUMENT_ROOT']."/_s/c.php");
 	require_once(SYS_PATH."auth.php");
 	
-	$include='header'; include(VIEW_PATH."borders.admin.php");
+	$include='header'; include(EDIT_PATH."borders.admin.php");
 	$table = 'langs';
 
 ?>
@@ -45,4 +45,4 @@
 	<br /><input type="submit" class="save" value="Сохранить" />
 </form>
 
-<? $include='footer'; include(VIEW_PATH."borders.admin.php") ?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php") ?>

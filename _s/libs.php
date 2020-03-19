@@ -10,8 +10,45 @@
 //echo "Privat24 USD : ".$cours_data_obj[2]->sale;
 //$UAH_PER_BTC = round($cours_data_obj[2]->sale * $exchange_data_obj->$currency->last);
 
+function clear_lang_in_url($url_array){
+	global $langs_array;
+	if(is_array($url_array)){
+		foreach($url_array as $part_url){
+			if(!in_array($part_url, $langs_array)){
+				$url_without_lang .= "$part_url/";
+			}
+		}
+	} else {
+		exit('Error - code 1003');
+	}
+	return $url_without_lang;
+}
 
+function open_tpl($url='',$template='tpl',$id='1',$lang='ru'){
 
+	if($template=='tpl'){
+		$query = 'SELECT * FROM pages WHERE addr='.DB::quote($url); //ищем в базе такой addr
+	} else {
+		$query = 'SELECT * FROM pages WHERE id='.$id;
+	}
+	$I = DB::fetchAssoc(DB::query($query));
+				
+	// тянем с базы tpl
+	$query = 'SELECT '.$template.' FROM types WHERE id="'.$I[type].'" LIMIT 1';
+  	$tpl_file = DB::fetchAssoc(DB::query($query));
+
+	// проверка и запуск файла
+	if($template=='admin') {
+		$file = EDIT_PATH.$tpl_file[$template];
+	} else {
+		$file = VIEW_PATH.$tpl_file[$template];
+	}
+	if (is_file($file)){
+		include_once($file);
+	} else {
+		exit('Error - code 1002');
+	}
+}
 
 
 

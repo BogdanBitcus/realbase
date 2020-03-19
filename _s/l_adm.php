@@ -7,7 +7,7 @@
 	$res = DB::query($query);
  	while($o = DB::fetchAssoc($res)) $I['row'][]=$o;
 
-	$include='header'; include(VIEW_PATH."borders.admin.php");
+	$include='header'; include(EDIT_PATH."borders.admin.php");
 
 ?>
 <form name="admingu" action="/_s/s_list.php" method="post" enctype="multipart/form-data">
@@ -83,4 +83,4 @@
 <input type="submit" class="save" value="Сохранить">
 </form>
 
-<? $include='footer'; include(VIEW_PATH."borders.admin.php")?>
+<? $include='footer'; include(EDIT_PATH."borders.admin.php")?>
