@@ -49,10 +49,10 @@ RewriteRule ^(.+)$ ?url=$1 [QSA,L]
     ExpiresByType application/pdf "access plus 1 month"
 
     # Включаем кэширование css, javascript и текстовых файлоф на одну неделю
-    ExpiresByType text/css "access plus 7 days"
-    ExpiresByType text/javascript "access plus 7 days"
-    ExpiresByType application/javascript "access plus 7 days"
-    ExpiresByType application/x-javascript "access plus 7 days"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
 
     # Включаем кэширование html и htm файлов на один день
     ExpiresByType text/html "access plus 43200 seconds"
