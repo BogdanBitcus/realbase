@@ -47,7 +47,7 @@ function open_tpl($url='',$template='tpl',$id='1',$lang='ru'){
 	if (is_file($file)){
 		include_once($file);
 	} else {
-		exit('Error - code 1002');
+		exit('Error - code 1002 (No template file)');
 	}
 }
 
