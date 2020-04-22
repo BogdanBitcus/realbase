@@ -5,7 +5,7 @@ $start_microtime = microtime(true);
 	include_once($_SERVER['DOCUMENT_ROOT']."/_s/seo.php");
 	include_once($_SERVER['DOCUMENT_ROOT']."/_s/c.php");
 
-	$url = !isset($_GET['url'])? 'home_page': $_GET['url'];
+	$url = !isset($_GET['url']) ? 'home_page' : $_GET['url'];
     
     $url_trim = rtrim($url, '/');
     $url_array = explode('/', $url_trim);
@@ -37,7 +37,7 @@ $start_microtime = microtime(true);
 		}
     } else { // other enter && 404
         if ($url_array[0] == "home_page") { // Main Page
-            open_tpl($url,'tpl',1);
+            open_tpl('','tpl',1);
         } elseif(is_file(VIEW_PATH.'view.'.$url_array[0].'.php') && isset($url_array[1])) { // get tpl for flat
         	$id = $url_array[1];
         	include_once(VIEW_PATH.'view.'.$url_array[0].'.php');
