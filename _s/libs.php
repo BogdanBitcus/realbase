@@ -43,6 +43,7 @@ function open_tpl($url='',$template='tpl',$id='1',$lang='ru'){
 	} else {
 		$file = VIEW_PATH.$tpl_file[$template];
 	}
+
 	if (is_file($file)){
 		include_once($file);
 	} else {
